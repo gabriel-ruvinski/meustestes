@@ -18,12 +18,12 @@ int retangulo(int base, int altura) {
 }
 
 void exibir_resultados(float cir, int ret) {
-    printf("Area do circulo: %.2f\n", cir);
-    printf("Perimetro retangulo: %d\n", ret);
+    printf("Area do circulo: %.2fcm^2\n", cir);
+    printf("Perimetro retangulo: %dcm\n", ret);
 }
 
 int main() {
-    float raio = 5.5;
+    float raio = 9.45;
     int ladoret[] = {7, 15};
 
     exibir_resultados(circulo(raio), retangulo(ladoret[0], ladoret[1]));
