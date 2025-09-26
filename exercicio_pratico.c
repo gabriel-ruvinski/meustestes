@@ -17,16 +17,43 @@ int retangulo(int base, int altura) {
     return base*2 + altura*2;
 }
 
-void exibir_resultados(float cir, int ret) {
-    printf("Area do circulo: %.2fcm^2\n", cir);
-    printf("Perimetro retangulo: %dcm\n", ret);
+void exibir_menu() {
+    printf("=== MENU ===\n");
+    printf("1. Area do circulo\n");
+    printf("2. Perimetro do retangulo\n");
+    printf("0. Sair\n");
+    printf("Opcao: ");
 }
 
 int main() {
-    float raio = 9.45;
-    int ladoret[] = {7, 15};
+    float raio;
+    int opcao;
+    int ladoret[2];
 
-    exibir_resultados(circulo(raio), retangulo(ladoret[0], ladoret[1]));
+    do {
+        exibir_menu();
+        scanf("%d", &opcao);
+
+        switch(opcao) {
+            case 1:
+                printf("Digite o raio do circulo: ");
+                scanf("%f", &raio);
+                printf("Area do circulo: %.2f\n\n", circulo(raio));
+                break;
+
+            case 2:
+                printf("Digite a largura: ");
+                scanf("%d", &ladoret[0]);
+                printf("Digite a altura: ");
+                scanf("%d", &ladoret[1]);
+                printf("Perimetro do retangulo: %d\n\n", retangulo(ladoret[1], ladoret[0]));
+                break;
+
+            case 0:
+                printf("Saindo...");
+                break;
+        }
+    } while (opcao != 0);
 
     return 0;
 }
